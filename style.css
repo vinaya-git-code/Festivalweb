@@ -1,438 +1,431 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Fixed: '0' was incorrect, should be 'border-box' */
+/* ==========================================
+   1. GLOBAL STYLES & RESET
+   ========================================== */
+* { 
+    margin: 0; /* Zero margin */
+    padding: 0; /* Zero padding */
+    box-sizing: border-box; /* Fix width */
 }
 
-html {
-    scroll-behavior: smooth;
+html { 
+    scroll-behavior: smooth; /* Smooth scroll */
 }
 
-body {
-    font-family: 'Playfair Display', serif;
-    position: relative;
-    background-color: white;
-    color: #333;
+body { 
+    font-family: 'Playfair Display', serif; /* Main font */
+    position: relative; /* Relative stack */
+    background-color: white; /* White bg */
+    color: #333; /* Dark text */
 }
 
-/* Background Overlay Effect */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(4, 1, 1, 0.9)), 
-                url('img/Ganesh-Chaturthi.jpg'); 
-                background-size: cover;
-    opacity: 0.8;
-    z-index: -1;
-    pointer-events: none;
+body::before { 
+    content: ""; /* Empty element */
+    position: fixed; /* Lock position */
+    top: 0; /* Top edge */
+    left: 0; /* Left edge */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(4, 1, 1, 0.9)), url('img/Ganesh-Chaturthi.jpg'); /* Background image */
+    background-size: cover; /* Fit screen */
+    opacity: 0.8; /* Transparency */
+    z-index: -1; /* Move behind */
+    pointer-events: none; /* Ignore clicks */
 }
 
 
-.nav {
-    position: fixed; /* Changed to 'fixed' so it stays on top while scrolling */
-    top: 0;
-    width: 100%;
-    z-index: 1030;
-    background-color: transparent !important;
-    
-    transition: 0.4s;
-   
+/* ==========================================
+   2. NAVIGATION BAR
+   ========================================== */
+.nav { 
+    position: fixed; /* Sticky top */
+    top: 0; /* Align top */
+    width: 100%; /* Full width */
+    z-index: 1030; /* Layer top */
+    background-color: transparent !important; /* No background */
+    transition: 0.4s; /* Smooth effect */
 }
 
-.navbar-brand, h5 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
+.navbar-brand, h5 { 
+    font-family: 'Playfair Display', serif; /* Brand font */
+    font-weight: 700; /* Extra bold */
 }
 
-.navbar-brand:hover {
-    text-shadow: 0px 0px 10px black;
+.navbar-brand:hover { 
+    text-shadow: 0px 0px 10px black; /* Text shadow */
 }
 
 .navbar-light .navbar-nav .nav-link, 
-.navbar-light .navbar-brand {
-    color: white !important;
+.navbar-light .navbar-brand { 
+    color: white !important; /* White color */
 }
 
-.navbar-nav .nav-link {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 500;
-    letter-spacing: 1px;
+.navbar-nav .nav-link { 
+    font-family: 'Poppins', sans-serif !important; /* Clean font */
+    font-weight: 500; /* Medium bold */
+    letter-spacing: 1px; /* Word gap */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #dc7028 !important;
-    font-weight: 700;
-    transform: scale(1.0);
+.navbar-nav .nav-link:hover { 
+    color: #dc7028 !important; /* Change color */
+    font-weight: 700; /* Extra bold */
+    transform: scale(1.0); /* Keep size */
 }
 
-.dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.9);
+.dropdown-menu { 
+    background-color: rgba(255, 255, 255, 0.9); /* Clear background */
 }
 
-.dropdown-item:hover {
-    background-color: #dc7028 !important;
-    color: white !important;
-    font-weight: 700; 
-    padding-left: 20px;
-}
-
-
-.carousel-item img {
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(60%);
-}
-
-.carousel-caption h5 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-}
-
-.carousel-caption p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.dropdown-item:hover { 
+    background-color: #dc7028 !important; /* Hover background */
+    color: white !important; /* Hover color */
+    font-weight: 700; /* Hover bold */
+    padding-left: 20px; /* Shift right */
 }
 
 
-#intro-section {
-    scroll-margin-top: 100px; /* Offset for fixed navbar */
+/* ==========================================
+   3. HERO CAROUSEL & HERO INTRO
+   ========================================== */
+.carousel-item img { 
+    height: 100vh; /* Screen height */
+    width: 100%; /* Full width */
+    object-fit: cover; /* Center image */
+    filter: brightness(60%); /* Darken image */
 }
 
-.intro {
-    color: #ffffff;
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+.carousel-caption h5 { 
+    font-size: 3rem; /* Huge text */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* Dark shadow */
 }
 
-hr {
-    height: 3px !important;
-    background-color: #e2905a;
-    border-radius: 10px;
+.carousel-caption p { 
+    font-size: 1.2rem; /* Medium text */
+    font-weight: 300; /* Thin font */
+    text-transform: uppercase; /* ALL CAPS */
+    letter-spacing: 2px; /* Text gap */
 }
 
-.sec1 {
-    color: #dc7028;
+#intro-section { 
+    scroll-margin-top: 100px; /* Top gap */
 }
 
-.para {
-    padding: 5px;
-    line-height: 2;
-    font-size: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    color: #ffffff;
+.intro { 
+    color: #ffffff; /* White text */
+    font-family: 'Playfair Display', serif; /* Title font */
+    font-weight: 800; /* Thick font */
+    text-transform: uppercase; /* ALL CAPS */
+    letter-spacing: 3px; /* Wide gap */
 }
 
-
-#festivals-detail {
-    scroll-margin-top: 100px;
+hr { 
+    height: 3px !important; /* Line thickness */
+    background-color: #e2905a; /* Orange line */
+    border-radius: 10px; /* Round line */
 }
 
-.fest1 {
-    font-weight: 700;
-    font-size: 2.9rem;
-    margin-bottom: 15px;
-    display: block;
-}
-.fest1:hover
-{
-    
-    text-shadow: 0px 0px 50px orange;
-    transition: 1.2s;
+.sec1 { 
+    color: #dc7028; /* Theme color */
 }
 
-.box {
-    font-family: 'Playfair Display', serif;
-    width: 100%; 
-    height: 100%;
-    padding: 25px;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 251, 251, 0.2);
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
-    line-height: 1.6;
-    text-transform: capitalize;
-    font-size: 15px;
-    background-image: linear-gradient(rgb(227, 198, 162), rgba(40, 29, 23, 0.7)), 
-                      url('img/Gudhi_Padwa_Gudhi.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    transition: transform 0.3s ease;
-}
-
-.box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 25px rgba(109, 77, 45, 0.921);
-}
-
-.heading {
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.fest2{
-    font-weight: 700;
-    font-size: 2.9rem;
-    margin-bottom: 15px;
-    margin-top: 90px;
-    display: block;
-
-}
-.fest2:hover
-{
-    text-shadow: 0px 0px 50px orange;
-    transition: 1.2s;
+.para { 
+    padding: 5px; /* Tiny space */
+    line-height: 2; /* Text spacing */
+    font-size: 20px; /* Large text */
+    max-width: 500px; /* Max width */
+    margin: 0 auto; /* Center align */
+    color: #ffffff; /* White text */
 }
 
 
-
-.text-warning
-{
-    color: #dc7028 !important;
+/* ==========================================
+   4. FESTIVALS & SECTIONS
+   ========================================== */
+#festivals-detail { 
+    scroll-margin-top: 100px; /* Top gap */
 }
 
-.box1{
-   font-family: 'Playfair Display', serif;
-    width: 100%; 
-    height: 100%;
-    padding: 25px;
-    margin-top: 5px;
-    line-height: 1.6;
-    text-transform: capitalize;
-    font-size: 18px;
-    text-align: center;
-    color: #ffffff;
-
+.fest1 { 
+    font-weight: 700; /* Extra bold */
+    font-size: 2.9rem; /* Giant text */
+    margin-bottom: 15px; /* Bottom space */
+    display: block; /* Block element */
 }
 
-.box2 {
-    width: 100%;
-    overflow: hidden; /* Prevents anything from leaking out */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-.box2 img {
-    width: 120%;
-    max-height: 550px; /* Optional: Sets a maximum height */
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-}
-.box2 img:hover {
-    transform: scale(1.05);
-
+.fest1:hover { 
+    text-shadow: 0px 0px 50px orange; /* Orange glow */
+    transition: 1.2s; /* Slow animation */
 }
 
-/* Gauri ganpati */
-.fest3
-{
-    font-weight: 700;
-    font-size: 2.9rem;
-    margin-bottom: 15px;
-    margin-top: 90px;
-    display: block;
-}
-.fest3:hover
-{
-    text-shadow: 0px 0px 50px orange;
-    transition: 0.6s;
-}
-.subrow1{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.col2 {
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center;     /* Vertically center */
-    min-height: 400px;       /* Height fix karein taaki upar-niche se gap dikhe */
-    padding: 20px;           /* Breathing space ke liye */
-}
-.col2 img {
-    /* Margin-left: 150px ko DELETE kar dein */
-    max-width: 100%;         /* Mobile par screen se bahar nahi jayegi */
-    height: auto;
-    width: 80%;              /* Desktop par size thodi badi rakhne ke liye */
-    transition: all 0.4s ease;
-    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.2)); /* Default light shadow */
-}
-@media (max-width: 768px) {
-    .col2 {
-        min-height: auto;    
-        margin-top: 20px;   
-    }
-    .col2 img {
-        width: 100%;      
-    }
+.box { 
+    font-family: 'Playfair Display', serif; /* Box font */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 25px; /* Inner space */
+    margin-top: 20px; /* Top gap */
+    border-radius: 10px; /* Round corners */
+    border: 1px solid rgba(255, 251, 251, 0.2); /* Thin border */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3); /* Soft shadow */
+    line-height: 1.6; /* Line spacing */
+    text-transform: capitalize; /* First Caps */
+    font-size: 15px; /* Normal text */
+    background-image: linear-gradient(rgb(227, 198, 162), rgba(40, 29, 23, 0.7)), url('img/Gudhi_Padwa_Gudhi.jpg'); /* Card image */
+    background-size: cover; /* Scale background */
+    background-position: center; /* Center background */
+    color: #ffffff; /* White text */
+    transition: transform 0.3s ease; /* Quick animation */
 }
 
-
-
-.col2:hover {
-    box-shadow: none !important; 
+.box:hover { 
+    transform: translateY(-10px); /* Lift up */
+    box-shadow: 0px 10px 25px rgba(109, 77, 45, 0.921); /* Deeper shadow */
 }
 
-
-.col2 img {
-    transition: transform 1.4s ease, filter 0.4s ease;
-   
+.heading { 
+    font-weight: 700; /* Item bold */
+    font-size: 1.8rem; /* Big title */
+    margin-bottom: 15px; /* Space below */
+    display: block; /* Full row */
 }
 
-
-.col2 img:hover {
-    
-    filter: drop-shadow(0px 10px 20px rgba(220, 112, 40, 0.8)); 
-    transform: scale(1.2); 
+.fest2 { 
+    font-weight: 700; /* Extra bold */
+    font-size: 2.9rem; /* Large headline */
+    margin-bottom: 15px; /* Bottom space */
+    margin-top: 90px; /* Large top-gap */
+    display: block; /* Full row */
 }
 
-/* shivjayanti*/
-.fest4
-{
-    font-weight: 700;
-    font-size: 2.9rem;
-    margin-bottom: 15px;
-    margin-top: 20px;
-    display: block;
-   
-
-}
-.fest4:hover
-{
-    text-shadow: 0px 0px 50px orange;
-    transition: 0.6s;
+.fest2:hover { 
+    text-shadow: 0px 0px 50px orange; /* Text glow */
+    transition: 1.2s; /* Slow speed */
 }
 
-.img-large {
-    width: 100% !important;   
-    max-width: none !important; 
-    transform: scale(1.1); 
-    display: block;
-    margin: 0 auto;           
+.text-warning { 
+    color: #dc7028 !important; /* Theme text */
+}
+
+.box1 { 
+    font-family: 'Playfair Display', serif; /* Text font */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 25px; /* Content padding */
+    margin-top: 5px; /* Tight margin */
+    line-height: 1.6; /* Regular reading */
+    text-transform: capitalize; /* First Caps */
+    font-size: 18px; /* Medium font */
+    text-align: center; /* Center text */
+    color: #ffffff; /* White text */
+}
+
+.box2 { 
+    width: 100%; /* Full frame */
+    overflow: hidden; /* Hide overflow */
+    display: flex; /* Flexbox mode */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0; /* Reset space */
+}
+
+.box2 img { 
+    width: 120%; /* Stretch width */
+    max-height: 550px; /* Height limit */
+    object-fit: cover; /* Fill box */
+    height: auto; /* Scale height */
+}
+
+.box2 img:hover { 
+    transform: scale(1.05); /* Slight zoom */
 }
 
 
-.col2 .img-large:hover {
-    transform: scale(1.25);  
-    filter: drop-shadow(0px 10px 30px rgba(220, 112, 40, 0.9));
+/* ==========================================
+   5. GAURI GANPATI SECTION
+   ========================================== */
+.fest3 { 
+    font-weight: 700; /* Bold heading */
+    font-size: 2.9rem; /* Main title */
+    margin-bottom: 15px; /* Bottom space */
+    margin-top: 90px; /* Top spacing */
+    display: block; /* Full row */
 }
 
-
-@media (max-width: 768px) {
-    .img-large {
-        width: 100% !important;
-        transform: scale(1);
-    }
+.fest3:hover { 
+    text-shadow: 0px 0px 50px orange; /* Orange shadow */
+    transition: 0.6s; /* Quick transition */
 }
 
-.culture{
-    margin-top: 50px;
-     font-weight: 700;
-    font-size: 2.9rem;
-    margin-bottom: 15px;
-    
-    display: block;
+.subrow1 { 
+    margin-top: 20px; /* Top margin */
+    margin-bottom: 20px; /* Bottom margin */
 }
 
+.col2 { 
+    display: flex; /* Flex display */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 400px; /* Min height */
+    padding: 20px; /* Box padding */
+}
 
-
-#videoCarousel .carousel-item video {
-    margin-top: 50px;
-    height: 500px; 
-    object-fit: cover; 
+.col2 img { 
+    max-width: 100%; /* Responsive max */
+    height: auto; /* Keep aspect */
+    width: 80%; /* Box scale */
+    transition: all 0.4s ease; /* Fast animation */
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.2)); /* Image shadow */
 }
 
 @media (max-width: 768px) {
-    #videoCarousel .carousel-item video {
-        height: 300px; 
+    .col2 { 
+        min-height: auto; /* Reset height */
+        margin-top: 20px; /* Vertical gap */
+    }
+    .col2 img { 
+        width: 100%; /* Mobile full */
+    }
+}
+
+.col2:hover { 
+    box-shadow: none !important; /* Kill shadow */
+}
+
+.col2 img { 
+    transition: transform 1.4s ease, filter 0.4s ease; /* Double transition */
+}
+
+.col2 img:hover { 
+    filter: drop-shadow(0px 10px 20px rgba(220, 112, 40, 0.8)); /* Glow filter */
+    transform: scale(1.2); /* Big scale */
+}
+
+
+/* ==========================================
+   6. SHIVJAYANTI SECTION
+   ========================================== */
+.fest4 { 
+    font-weight: 700; /* Extra bold */
+    font-size: 2.9rem; /* Title size */
+    margin-bottom: 15px; /* Lower space */
+    margin-top: 20px; /* Upper space */
+    display: block; /* Full line */
+}
+
+.fest4:hover { 
+    text-shadow: 0px 0px 50px orange; /* Soft glow */
+    transition: 0.6s; /* Fast speed */
+}
+
+.img-large { 
+    width: 100% !important; /* Force width */
+    max-width: none !important; /* Force limit */
+    transform: scale(1.1); /* Static scale */
+    display: block; /* Clear inline */
+    margin: 0 auto; /* Center page */
+}
+
+.col2 .img-large:hover { 
+    transform: scale(1.25); /* Large zoom */
+    filter: drop-shadow(0px 10px 30px rgba(220, 112, 40, 0.9)); /* Large shadow */
+}
+
+@media (max-width: 768px) {
+    .img-large { 
+        width: 100% !important; /* Full width */
+        transform: scale(1); /* Reset scale */
     }
 }
 
 
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ==========================================
+   7. CULTURES & VIDEOS
+   ========================================== */
+.culture { 
+    margin-top: 50px; /* Large space */
+    font-weight: 700; /* Thick font */
+    font-size: 2.9rem; /* Section title */
+    margin-bottom: 15px; /* Baseline space */
+    display: block; /* Line block */
+    letter-spacing: 1px; /* Character space */
 }
 
-@keyframes slideLeft {
-    from { opacity: 0; transform: translateX(-100px); }
-    to { opacity: 1; transform: translateX(0); }
+#videoCarousel .carousel-item video { 
+    margin-top: 50px; /* Video space */
+    height: 500px; /* Video height */
+    object-fit: cover; /* Stretch player */
 }
 
-@keyframes slideRight {
-    from { opacity: 0; transform: translateX(100px); }
-    to { opacity: 1; transform: translateX(0); }
+@media (max-width: 768px) {
+    #videoCarousel .carousel-item video { 
+        height: 300px; /* Small screen */
+    }
 }
 
-.animate-top { animation: slideDown 1.5s ease-out forwards; }
-.animate-left { animation: slideLeft 1.6s ease-out forwards; }
-.animate-right { animation: slideRight 1.6s ease-out forwards; }
 
-.intro-container, .info-left, .info-right {
-    opacity: 0;
+/* ==========================================
+   8. ANIMATIONS & EFFECTS
+   ========================================== */
+@keyframes slideDown { 
+    from { opacity: 0; transform: translateY(-50px); } /* Fade start */
+    to { opacity: 1; transform: translateY(0); } /* Fade end */
 }
 
-.text {
-    color: #dc7028;
+@keyframes slideLeft { 
+    from { opacity: 0; transform: translateX(-100px); } /* Left start */
+    to { opacity: 1; transform: translateX(0); } /* Left end */
 }
 
-.All6
-{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    
-   
-}
-.festive-card {
-    background-color: #dbc4b4fe;
-    border: 1px solid #874210;
-    border-radius: 12px;
-    color: white;
-    padding: 20px;
-    height: 100%; 
-    box-shadow: 0 0px 10px rgba(214, 172, 145, 0.933); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+@keyframes slideRight { 
+    from { opacity: 0; transform: translateX(100px); } /* Right start */
+    to { opacity: 1; transform: translateX(0); } /* Right end */
 }
 
-.festive-card:hover {
-   transform: translateY(-10px);
-    box-shadow: 0px 10px 25px rgba(16, 12, 8, 0.921);
+.animate-top { animation: slideDown 1.5s ease-out forwards; } /* Top animation */
+.animate-left { animation: slideLeft 1.6s ease-out forwards; } /* Left animation */
+.animate-right { animation: slideRight 1.6s ease-out forwards; } /* Right animation */
+
+.intro-container, .info-left, .info-right { 
+    opacity: 0; /* Hidden initial */
 }
 
-.festive-card .subrow1 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #333;
+.text { 
+    color: #dc7028; /* Theme color */
 }
 
-.festive-card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #0a0707;
-    margin-bottom: 0;
+
+/* ==========================================
+   9. FESTIVE CARDS UTILITIES
+   ========================================== */
+.All6 { 
+    margin-top: 30px; /* Section margin */
+    margin-bottom: 30px; /* Footer margin */
 }
 
-/* Section Title Style */
-.culture {
-    font-weight: bold;
-    letter-spacing: 1px;
+.festive-card { 
+    background-color: #dbc4b4fe; /* Card bg */
+    border: 1px solid #874210; /* Card border */
+    border-radius: 12px; /* Smooth card */
+    color: white; /* White text */
+    padding: 20px; /* Card space */
+    height: 100%; /* Full match */
+    box-shadow: 0 0px 10px rgba(214, 172, 145, 0.933); /* Box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Card physics */
 }
 
+.festive-card:hover { 
+    transform: translateY(-10px); /* Lift card */
+    box-shadow: 0px 10px 25px rgba(16, 12, 8, 0.921); /* Hover shadow */
+}
+
+.festive-card .subrow1 { 
+    font-size: 1.25rem; /* Card title */
+    font-weight: 700; /* Bold title */
+    margin-bottom: 12px; /* Inner gap */
+    color: #333; /* Dark header */
+}
+
+.festive-card p { 
+    font-size: 0.9rem; /* Small text */
+    line-height: 1.5; /* Text gap */
+    color: #0a0707; /* Clear text */
+    margin-bottom: 0; /* Zero margin */
+}
